@@ -119,5 +119,7 @@ def code_run(individuals = 16):
 
 
 if __name__ == "__main__":
-    if sys.argv:
+    if len(sys.argv) > 1:
         code_run(int(sys.argv[1]))
+    else:
+        code_run
