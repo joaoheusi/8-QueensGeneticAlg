@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6535701e99.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- returnable = [generation,genFittest,genFitness,generation_mean_fitness] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>8-Queens Problem</h1>
+        </div>
+        <div class="content">
+        <p>Number of Generations: {{ returnable[0]}}</p>
+        <p>Fittest Individual: {{ returnable[1][0] }}</p>
+        <p>Fitness of fittest individual: {{ returnable[2][0] }}</p>
+        <p>Average Fitness: {{ returnable[3] }}</p>
+        </div>    
+        <br>
+        <div class="tablecontainer text-center">
+            <table class="justify-content-center">
+                {% for lines in newmatrix %}
+                <tr>
+                    {% for item in lines %}
+                    {% if item == 1%}
+                        <td><i class="fas fa-chess-queen"></i></td>
+                    {% else %}
+                        <td> </td>
+                    {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br><br>
+</div>
+</body>
+</html>

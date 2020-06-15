@@ -1,0 +1,16 @@
+table,th,td,tr{
+    border: 1px solid black;
+}
+
+table{
+    margin: auto;
+    width: 350px;
+    height: 350px;
+}
+
+tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd) {
+    background: whitesmoke;
+  }
+  tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
+    background: grey;
+  }
