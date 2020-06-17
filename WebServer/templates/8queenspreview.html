@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6535701e99.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Queens</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>8-Queens Problem</h1>
+            <br><br>
+            <p>O programa visa resolver o problema das 8 rainhas, cujo objetivo é posicionar 8 rainhas
+                <br>em um tabuleiro de xadrez de forma que nenhuma consiga <em>matar</em> a outra.
+            </p>
+            <a href="{{ url_for('queens')}}" class="btn btn-primary btn-lg">Run Code</a>
+        </div>
+        <div class="content">
+            <p>A estrutura dos indivíduos é dada por um vetor de 8 posições [1,2,3,4,5,6,7,8]</p>
+            <p>A posição do item no vetor representa a coluna em que a peça está inserida.</p>
+            <p>O número em cada posição representa a linha em que a peça está inserida.</p>
+            <p>A reprodução dos indivíduos se dá em manter as caracteristicas em comum dos pais <br> 
+                e as outras características são geradas aleatoriamente. <br> Ex:</p>
+            <ul>
+                <li>Pai 1: [<b>1</b>,2,<b>3</b>,4,5,<b>6</b>,<b>7</b>,8]</li>
+                <li>Pai 2: [<b>1</b>,4,<b>3</b>,5,8,<b>6</b>,<b>7</b>,2]</li>
+                <li>Filho: [<b>1</b>,8,<b>3</b>,2,4,<b>6</b>,<b>7</b>,5]</li>
+            </ul>
+
+            <p>O número de indivíduos por geração é 16.
+                <br>A mutação tem 10% de chance de ocorrer em cada indivíduo de uma nova geração.</p>
+            <p>A avaliação dos indivíduos foi feita baseando-se em na quantidade de rainhas que conseguiam matar outras.
+                <br>Quanto maior é o número, menos <em><b>fit</b></em> é o indivíduo.
+            </p>
+            <p>A função de avaliação utilizada foi:
+                \[f = {1 \over 1-x}.\]
+            </p>
+        </div>
+    
+</body>
+</html>

@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/6535701e99.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./static/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +13,14 @@
     <div class="container">
         <div class="jumbotron">
             <h1>8-Queens Problem</h1>
+            <br>
+            {%if returnable%}
+            <a href="{{ url_for('queens')}}" class="btn btn-primary">Refresh</a>
+            <a href="{{ url_for('pages', page_name = '8queenspreview.html')}}" class="btn btn-info">Back to Description</a>
+            {%endif%}
         </div>
+        <!-- {%if returnable%} -->
+        <div>
         <div class="content">
         <p>Number of Generations: {{ returnable[0]}}</p>
         <p>Fittest Individual: {{ returnable[1][0] }}</p>
@@ -38,6 +44,10 @@
             </table>
         </div>
         <br><br>
+    </div>
+    <!-- {% else %} -->
+    <p>Click on Start to run code</p>
+    <!-- {% endif %} -->
 </div>
 </body>
 </html>

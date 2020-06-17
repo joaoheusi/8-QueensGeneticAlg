@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home_page():
-    return render_template('./index.html')
+    return render_template('./8queenspreview.html')
 
 
 @app.route('/8queens.html')
@@ -22,6 +22,12 @@ def queens():
         
 
     return render_template('./8queens.html',returnable=returnable,newmatrix=newmatrix)
+
+
+@app.route('/<string:page_name>')
+def pages(page_name):
+    return render_template(page_name)
+
 
 """ @app.route('/<string:page_name>')
 def pages(page_name):
